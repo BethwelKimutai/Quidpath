@@ -20,6 +20,8 @@ import ForgotPassword from './components/ForgotPassword';
 import AppTheme from '../Shared-theme/AppTheme';
 import ColorModeSelect from '../Shared-theme/ColorModeSelect';
 import { FacebookIcon, GoogleIcon, SitemarkIcon } from './components/CustomIcon';
+import NextLink from 'next/link';
+import MuiLink from '@mui/material/Link';
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: 'flex',
@@ -166,9 +168,14 @@ export default function SignInPage() {
             </Button>
             <Typography sx={{ textAlign: 'center' }}>
               Don&apos;t have an account?{' '}
-              <Link href="/material-ui/getting-started/templates/sign-in/" variant="body2" sx={{ alignSelf: 'center' }}>
-                Sign up
-              </Link>
+              <MuiLink
+                component={NextLink}
+                href="/SignIn"
+                variant="body2"
+                sx={{ alignSelf: 'center' }}
+              >
+                Sign in
+              </MuiLink>
             </Typography>
           </Box>
         </Card>
